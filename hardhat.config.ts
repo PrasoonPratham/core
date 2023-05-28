@@ -1,6 +1,12 @@
 import { HardhatUserConfig } from 'hardhat/types';
 import { accounts } from './helpers/test-wallets';
-import { eEthereumNetwork, eNetwork, ePolygonNetwork, eXDaiNetwork } from './helpers/types';
+import {
+  eEclipseNetwork,
+  eEthereumNetwork,
+  eNetwork,
+  ePolygonNetwork,
+  eXDaiNetwork,
+} from './helpers/types';
 import { HARDHATEVM_CHAINID } from './helpers/hardhat-constants';
 import { NETWORKS_RPC_URL } from './helper-hardhat-config';
 import dotenv from 'dotenv';
@@ -73,6 +79,7 @@ const config: HardhatUserConfig = {
     sandbox: getCommonNetworkConfig(ePolygonNetwork.mumbai, 80001),
     mumbai: getCommonNetworkConfig(ePolygonNetwork.mumbai, 80001),
     xdai: getCommonNetworkConfig(eXDaiNetwork.xdai, 100),
+    worlds: getCommonNetworkConfig(eEclipseNetwork.worlds, 91003),
     hardhat: {
       hardfork: 'london',
       blockGasLimit: DEFAULT_BLOCK_GAS_LIMIT,
@@ -87,6 +94,9 @@ const config: HardhatUserConfig = {
       })),
       forking: mainnetFork,
     },
+    // solana: {
+    //   url: 'https://api.evm.worlds.eclipsenetwork.xyz/solana',
+    // },
     local: {
       url: 'http://127.0.0.1:8545/',
       accounts: {

@@ -1,4 +1,5 @@
 import {
+  eEclipseNetwork,
   eEthereumNetwork,
   ePolygonNetwork,
   eXDaiNetwork,
@@ -22,4 +23,5 @@ export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [ePolygonNetwork.mumbai]: process.env.MUMBAI_RPC_URL,
   [ePolygonNetwork.matic]: process.env.POLYGON_RPC_URL,
   [eXDaiNetwork.xdai]: 'https://rpc.xdaichain.com/',
+  [eEclipseNetwork.worlds]: 'https://api.evm.worlds.eclipsenetwork.xyz/solana',
 };

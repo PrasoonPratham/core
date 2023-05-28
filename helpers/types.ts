@@ -2,7 +2,7 @@ export interface SymbolMap<T> {
   [symbol: string]: T;
 }
 
-export type eNetwork = eEthereumNetwork | ePolygonNetwork | eXDaiNetwork;
+export type eNetwork = eEthereumNetwork | ePolygonNetwork | eXDaiNetwork | eEclipseNetwork;
 
 export enum eEthereumNetwork {
   kovan = 'kovan',
@@ -16,6 +16,10 @@ export enum eEthereumNetwork {
 export enum ePolygonNetwork {
   matic = 'matic',
   mumbai = 'mumbai',
+}
+
+export enum eEclipseNetwork {
+  worlds = 'worlds',
 }
 
 export enum eXDaiNetwork {
@@ -38,7 +42,8 @@ export type tStringTokenSmallUnits = string; // 1 wei, or 1 basic unit of USDC, 
 export type iParamsPerNetwork<T> =
   | iEthereumParamsPerNetwork<T>
   | iPolygonParamsPerNetwork<T>
-  | iXDaiParamsPerNetwork<T>;
+  | iXDaiParamsPerNetwork<T>
+  | iEclipseParamsPerNetwork<T>;
 
 export interface iParamsPerNetworkAll<T>
   extends iEthereumParamsPerNetwork<T>,
@@ -57,6 +62,10 @@ export interface iEthereumParamsPerNetwork<eNetwork> {
 export interface iPolygonParamsPerNetwork<T> {
   [ePolygonNetwork.matic]: T;
   [ePolygonNetwork.mumbai]: T;
+}
+
+export interface iEclipseParamsPerNetwork<T> {
+  [eEclipseNetwork.worlds]: T;
 }
 
 export interface iXDaiParamsPerNetwork<T> {

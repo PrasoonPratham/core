@@ -8,8 +8,9 @@
     "quick-test": "hardhat test",
     "spdx": "hardhat prepend-spdx-license",
     "size": "npm run compile && hardhat size-contracts",
-    "full-deploy-local": "hardhat full-deploy --network localhost",
+    "full-deploy-local": "hardhat full-deploy --network local",
     "full-deploy-mumbai": "hardhat full-deploy --network mumbai",
+    "full-deploy-worlds": "hardhat full-deploy --network worlds",
     "coverage": "npm run compile && hardhat coverage --temp temp-artifacts --testfiles test/emptyrun.coverage.ts && hardhat coverage --temp temp-artifacts --testfiles '!test/emptyrun.coverage.ts'",
     "run-env": "npm i && tail -f /dev/null",
     "hardhat": "hardhat",
@@ -51,7 +52,7 @@
     "eslint-plugin-prettier": "4.0.0",
     "ethereum-waffle": "3.4.0",
     "ethers": "5.5.1",
-    "hardhat": "2.7.0",
+    "hardhat": "^2.7.0",
     "hardhat-contract-sizer": "2.1.1",
     "hardhat-gas-reporter": "1.0.6",
     "hardhat-log-remover": "2.0.2",
@@ -71,7 +72,8 @@
     }
   },
   "dependencies": {
-    "@openzeppelin/contracts": "4.5.0"
+    "@openzeppelin/contracts": "4.5.0",
+    "openssl": "^2.0.0"
   },
   "author": "Lens",
   "contributors": [
